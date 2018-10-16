@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Judging form!</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+        $("#preview").click(function(){
+        $("items1").show();
+    });
+});
+</script>
+
+</head>
+<body>
+<h1>Create Form</h1>
+<br>
+<br>
+How many criteria? 
+<select  id="noofcriteria">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<br>
+<br>
+Types of evaluators
+  <input type="checkbox" name="Instructors" value="Instructors"> Instructors
+  <input type="checkbox" name="Peers" value="Peers"> Peers
+  <input type="checkbox" name="Self" value="Self"> Self
+  <input type="checkbox" name="Other" value="Other"> Other (specify) <input type="text"><br>
+(Check all to be included)
+<br>
+<br>
+<br>
+<div id="items1">
+Criteria 1:
+<input type="text" value="They followed the instruction. (1: Not agree -- 5: Agree)" ><br>
+Out of 
+<input type="text" >
+</div>
+<div id="items2">
+Criteria 2:
+<input type="text" value="They submitted the work in time. (1: No  2: Yes)"><br>
+Out of 
+<input type="text" >
+</div>
+<div id="items3">
+Criteria 3:
+<input type="text" value="The problem statement is clear.  (1: Do not agree -- 5: Agree)"><br>
+Out of 
+<input type="text" >
+</div>
+<div id="items4">
+Criteria 4:
+<input type="text" value="Their methodology was sound and systematic?   (1: Do not agree -- 5: Agree)"><br>
+Out of 
+<input type="text" >
+</div>
+<div id="items5">
+Criteria 5:
+<input type="text" value="They have enough evidence to support their claim.  (1: Do not agree -- 5: Agree)"><br>
+Out of 
+<input type="text" >
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<button id="preview" onclick="myFunction()">Preview</button>
+<button id="cancel" onclick="myFunction()">Cancel</button>
+</body>
+</html>

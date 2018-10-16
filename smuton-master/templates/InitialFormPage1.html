@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Judging form!</title>
+<!-- <script type="text/javascript" src="smuton-master/static/js/FieldAdder1.js"></script> -->
+<!-- <script type="text/javascript" src="smuton-master/static/js/FieldAdder2.js"></script> -->
+<script>
+function lala(){
+	var k = document.getElementById("noofcriteria");
+	var l = k.options[k.selectedIndex].value;
+
+	if(l=='1'){
+		document.getElementById("items1").style.display = "block";
+		document.getElementById("items2").style.display = "none";
+		document.getElementById("items3").style.display = "none";
+		document.getElementById("items4").style.display = "none";
+		document.getElementById("items5").style.display = "none";
+	}
+	if(l=='2'){
+		document.getElementById("items1").style.display = "block";
+		document.getElementById("items2").style.display = "block";
+		document.getElementById("items3").style.display = "none";
+		document.getElementById("items4").style.display = "none";
+		document.getElementById("items5").style.display = "none";
+	}
+	if(l=='3'){
+		document.getElementById("items1").style.display = "block";
+		document.getElementById("items2").style.display = "block";
+		document.getElementById("items3").style.display = "block";
+		document.getElementById("items4").style.display = "none";
+		document.getElementById("items5").style.display = "none";
+	}
+	if(l=='4'){
+		document.getElementById("items1").style.display = "block";
+		document.getElementById("items2").style.display = "block";
+		document.getElementById("items3").style.display = "block";
+		document.getElementById("items4").style.display = "block";
+		document.getElementById("items5").style.display = "none";
+	}
+	if(l=='5'){
+		document.getElementById("items1").style.display = "block";
+		document.getElementById("items2").style.display = "block";
+		document.getElementById("items3").style.display = "block";
+		document.getElementById("items4").style.display = "block";
+		document.getElementById("items5").style.display = "block";
+	}
+	
+	
+}
+</script>
+</head>
+<body>
+<h1>Create Form</h1>
+<br>
+<br>
+How many criteria? 
+<select  id="noofcriteria">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<br>
+<br>
+Types of evaluators
+  <input type="checkbox" name="Instructors" value="Instructors"> Instructors
+  <input type="checkbox" name="Peers" value="Peers"> Peers
+  <input type="checkbox" name="Self" value="Self"> Self
+  <input type="checkbox" name="Other" value="Other"> Other (specify) <input type="text"><br>
+(Check all to be included)
+<br>
+<br>
+<br>
+<div id="items1" style=display:none>
+Criteria 1:
+<input type="text" ><br>
+Out of 
+<input type="text" >
+</div>
+<div id="items2" style=display:none>
+Criteria 2:
+<input type="text" ><br>
+Out of 
+<input type="text" >
+</div>
+<div id="items3" style=display:none>
+Criteria 3:
+<input type="text" ><br>
+Out of 
+<input type="text" >
+</div>
+<div id="items4" style=display:none>
+Criteria 4:
+<input type="text" ><br>
+Out of 
+<input type="text" >
+</div>
+<div id="items5" style=display:none>
+Criteria 5:
+<input type="text" ><br>
+Out of 
+<input type="text" >
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<button id="preview" onclick="lala()">Preview</button>
+</body>
+</html>
