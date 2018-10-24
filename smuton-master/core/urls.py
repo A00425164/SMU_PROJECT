@@ -6,5 +6,5 @@ Created on Aug 28, 2018
 
 app_name = 'core'
 urlpatterns = [
-   
+  
 ]

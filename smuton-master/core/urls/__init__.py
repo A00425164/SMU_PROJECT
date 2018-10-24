@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 app_name="core"
 
 urlpatterns = [
-
+    url(r'^forms/', include('core.urls.form_urls')),
     url(r'^judges/', include('core.urls.judge_urls')),  # NOQA
     url(r'^teams/', include('core.urls.team_urls')),
     url(r'^scales/', include('core.urls.scale_urls')),
