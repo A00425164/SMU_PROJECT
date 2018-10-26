@@ -98,3 +98,22 @@ class Responses(models.Model):
     class Meta:
         managed = False
         db_table = 'core_resonses_vw'
+
+# class Dynamics(models.Model):
+#     
+#     name = models.CharField(max_length=128, verbose_name="Criteria")
+#     
+#     SCALE_CHOICES = (
+#         (1, '-----'),
+#         (2, '1-5'),
+#         (3, 'Yes/No'),
+#     )
+#     
+#     number = models.IntegerField(
+#         choices=SCALE_CHOICES,
+#         default=1,
+#         verbose_name="Scale")
+#     criteria = models.ManyToManyField(Criteria)
+# 
+#     def __str__(self):
+#         return "scale " + str(self.number)

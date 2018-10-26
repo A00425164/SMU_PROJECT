@@ -87,38 +87,71 @@ function lala(){
 <br>
 <br>
 <br>
+
+<form action="" method="post">
+{% csrf_token %}
+{{from}}
+<!-- {{form.as_p}} -->
+
+
+
+
+
 <div style="margin-left:30px; ">
 <div id="items1" style=display:none>
 <font color="#922b21">Criteria 1:</font>
 <input type="text" ><br>
-<font color="#922b21">Out of </font>
-<input type="text" >
+<font color="#922b21">Scale </font>
+<select  id="scale1">
+  <option value="-----">-----</option>
+  <option value="1-5">1-5</option>
+  <option value="Yes/No">Yes/No</option>
+</select>
 </div>
 <div id="items2" style=display:none>
 <font color="#922b21">Criteria 2:</font>
 <input type="text" ><br>
-<font color="#922b21">Out of </font>
-<input type="text" >
+<font color="#922b21">Scale </font>
+<select  id="scale2">
+  <option value="-----">-----</option>
+  <option value="1-5">1-5</option>
+  <option value="Yes/No">Yes/No</option>
+</select>
 </div>
 <div id="items3" style=display:none>
 <font color="#922b21">Criteria 3:</font>
 <input type="text" ><br>
-<font color="#922b21">Out of </font>
-<input type="text" >
+<font color="#922b21">Scale </font>
+<select  id="scale3">
+  <option value="-----">-----</option>
+  <option value="1-5">1-5</option>
+  <option value="Yes/No">Yes/No</option>
+</select>
 </div>
 <div id="items4" style=display:none>
 <font color="#922b21">Criteria 4:</font>
 <input type="text" ><br>
-<font color="#922b21">Out of </font>
-<input type="text" >
+<font color="#922b21">Scale </font>
+<select  id="scale4">
+  <option value="-----">-----</option>
+  <option value="1-5">1-5</option>
+  <option value="Yes/No">Yes/No</option>
+</select>
 </div>
 <div id="items5" style=display:none>
 <font color="#922b21">Criteria 5:</font>
 <input type="text" ><br>
-<font color="#922b21">Out of </font>
-<input type="text" >
+<font color="#922b21">Scale </font>
+<select  id="scale5">
+  <option value="-----">-----</option>
+  <option value="1-5">1-5</option>
+  <option value="Yes/No">Yes/No</option>
+</select>
 </div>
+<input type="submit" value="Submit"/>
 </div>
+
+</form>
 <br>
 <br>
 <br>
