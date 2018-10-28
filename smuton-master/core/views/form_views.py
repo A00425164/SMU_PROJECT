@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.views import View
 from django import forms
-#from core.forms import DynamicForm
+from core.forms import DynamicForm
 from django.template.context_processors import request
 from test.test_array import ArraySubclassWithKwargs
 #from django.views.generic.edit import FormView
@@ -34,3 +34,11 @@ class PreviewFormView(View):
     
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name) 
+    
+    
+class DynamicFormView(View):
+    template_name = "core/DynamicFormPage1.html"
+    
+    def get(self, request, *args, **kwargs):
+        form = DynamicForm()
+        return render(request, self.template_name, {'form': form})
