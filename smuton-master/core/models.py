@@ -17,14 +17,14 @@ class Judge(models.Model):
     email = models.EmailField(blank=True)
     hackathon = models.ForeignKey(Hackathon, on_delete=models.CASCADE)
     def __str__(self):
-        return self.name
+        return "(id:" + str(self.pk) + "; name:" + self.name + ")"
 
 class Team(models.Model):
     name = models.CharField(max_length=128, verbose_name="Team Name")
     participants = models.CharField(max_length=512, verbose_name="Participants: comma-separated", blank=True)
     hackathon = models.ForeignKey(Hackathon, on_delete=models.CASCADE)
     def __str__(self):
-        return self.name
+        return "(id:" + str(self.pk) + "; name:" + self.name + ")"
 
 class Scale(models.Model):
     name = models.CharField(max_length=64, verbose_name="Scale Name", unique=True)
@@ -51,19 +51,9 @@ class Criteria(models.Model):
     
         
 class JudgingRound(models.Model):
-    ROUND_CHOICES = (
-        (1, '1'),
-        (2, '2'),
-        (3, '3'),
-        (4, '4'),
-        (5, '5')
-    )
     
     hackathon = models.ForeignKey(Hackathon, on_delete=models.CASCADE)
-    number = models.IntegerField(
-        choices=ROUND_CHOICES,
-        default=1,
-        verbose_name="Round")
+    number = models.IntegerField(default=1, verbose_name="Round")
     criteria = models.ManyToManyField(Criteria)
 
     def __str__(self):
@@ -98,22 +88,3 @@ class Responses(models.Model):
     class Meta:
         managed = False
         db_table = 'core_resonses_vw'
-
-# class Dynamics(models.Model):
-#     
-#     name = models.CharField(max_length=128, verbose_name="Criteria")
-#     
-#     SCALE_CHOICES = (
-#         (1, '-----'),
-#         (2, '1-5'),
-#         (3, 'Yes/No'),
-#     )
-#     
-#     number = models.IntegerField(
-#         choices=SCALE_CHOICES,
-#         default=1,
-#         verbose_name="Scale")
-#     criteria = models.ManyToManyField(Criteria)
-# 
-#     def __str__(self):
-#         return "scale " + str(self.number)

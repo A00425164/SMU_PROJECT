@@ -7,7 +7,7 @@ class JudgeForm(forms.ModelForm):
     class Meta:
         model = Judge
         fields = ['name', 'email', 'role', 'hackathon']
-        exclude = []
+        exclude = ['hackathon']
         widgets = None
         localized_fields = None
         labels = {}
@@ -50,7 +50,7 @@ class TeamForm(forms.ModelForm):
     class Meta:
         model = Team
         fields = ['name', 'participants', 'hackathon']
-        exclude = []
+        exclude = ['hackathon']
         widgets = None
         localized_fields = None
         labels = {}
@@ -249,7 +249,7 @@ class JudgingRoundForm(forms.ModelForm):
     class Meta:
         model = JudgingRound
         fields = ['hackathon', 'number']
-        exclude = []
+        exclude = ['hackathon', 'number']
         widgets = None
         localized_fields = None
         labels = {}
@@ -348,29 +348,3 @@ class DynamicForm(forms.Form):
     noofcriteria = forms.Select(choices=NOOFCRITERIA)
     
     post = forms.Select()
-         
-    #def __init__(self, *args, **kwargs):
-    #    return super(DynamicForm, self).__init__(*args, **kwargs)
- 
-    #def is_valid(self):
-    #    return super(DynamicForm, self).is_valid()
- 
-    #def full_clean(self):
-    #    return super(DynamicForm, self).full_clean()
- 
-    #def clean_name(self):
-    #    name = self.cleaned_data.get("Criteria", None)
-    #    return name
- 
-    #def clean_number(self):
-    #    number = self.cleaned_data.get("Scale", None)
-    #    return number
- 
-    #def clean(self):
-    #    return super(DynamicForm, self).clean()
- 
-    #def validate_unique(self):
-    #    return super(DynamicForm, self).validate_unique()
- 
-    #def save(self, commit=True):
-    #    return super(DynamicForm, self).save(commit)
