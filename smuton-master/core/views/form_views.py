@@ -33,7 +33,7 @@ class DynamicFormView(View):
             
         
         args = {'form': form, 'data':data}
-        
+        print(request.POST)
         return render(request, self.template_name, args)
         #return render(request, self.template_name, answer)
         #return super(DynamicFormView, self).post(request, *args, **kwargs)
