@@ -1,19 +1,173 @@
-{% extends "base.html" %}
-
+{% extends "core/Dynamic_base.html" %}
+{% url 'DynamicFormPage1' %}
 {% block title %}
     Dynamic Form Page
 {% endblock %}
 
+
+
 {% block content %}
+
+<script>
+function lala(){
+	var k = document.getElementById("noofcriteria");
+	var l = k.options[k.selectedIndex].value;
+
+	if(l=='1'){
+		document.getElementById("items1").style.display = "block";
+		document.getElementById("items2").style.display = "none";
+		document.getElementById("items3").style.display = "none";
+		document.getElementById("items4").style.display = "none";
+		document.getElementById("items5").style.display = "none";
+	}
+	if(l=='2'){
+		document.getElementById("items1").style.display = "block";
+		document.getElementById("items2").style.display = "block";
+		document.getElementById("items3").style.display = "none";
+		document.getElementById("items4").style.display = "none";
+		document.getElementById("items5").style.display = "none";
+	}
+	if(l=='3'){
+		document.getElementById("items1").style.display = "block";
+		document.getElementById("items2").style.display = "block";
+		document.getElementById("items3").style.display = "block";
+		document.getElementById("items4").style.display = "none";
+		document.getElementById("items5").style.display = "none";
+	}
+	if(l=='4'){
+		document.getElementById("items1").style.display = "block";
+		document.getElementById("items2").style.display = "block";
+		document.getElementById("items3").style.display = "block";
+		document.getElementById("items4").style.display = "block";
+		document.getElementById("items5").style.display = "none";
+	}
+	if(l=='5'){
+		document.getElementById("items1").style.display = "block";
+		document.getElementById("items2").style.display = "block";
+		document.getElementById("items3").style.display = "block";
+		document.getElementById("items4").style.display = "block";
+		document.getElementById("items5").style.display = "block";
+	}
+	
+	
+}
+</script>
+
 <div class="container">
-<h1>Create Form</h1>
+
 <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}
+
+<!-- {{from}} -->
+<!-- {{form.as_p}} -->
+
+
+
+<h1 style="margin-left:30px; ">Create Form</h1>
+<div class="w3-container w3-highway-red w3-center">
+
+
+</div>
+<br>
+<br>
+<p style="margin-left:30px; ">
+<font color="#922b21">How many criteria?</font>
+<select  id="noofcriteria" onclick="lala()" name="noofcriteria">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+</p>
+
+<br>
+<br>
+<p style="margin-left:30px; ">
+<font color="#922b21">Types of evaluators</font>
+  <input type="checkbox" name="Instructors" value="Instructors"> Instructors
+  <input type="checkbox" name="Peers" value="Peers"> Peers
+  <input type="checkbox" name="Self" value="Self"> Self
+  <input type="checkbox" name="Other" value="Other"> Other (specify) <input type="text"><br>
+<font color="#922b21">(Check all to be included)</font>
+</p>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+<div style="margin-left:30px; ">
+<div id="items1" style=display:none>
+<font color="#922b21">Criteria 1:</font>
+<input type="text" name="ctext1"><br>
+<font color="#922b21">Scale </font>
+<select  id="scale1" name="scale1">
+  <option value="-----">-----</option>
+  <option value="1-5">1-5</option>
+  <option value="Yes/No">Yes/No</option>
+</select>
+</div>
+<div id="items2" style=display:none>
+<font color="#922b21">Criteria 2:</font>
+<input type="text" name="ctext2"><br>
+<font color="#922b21">Scale </font>
+<select  id="scale2" name="scale2">
+  <option value="-----">-----</option>
+  <option value="1-5">1-5</option>
+  <option value="Yes/No">Yes/No</option>
+</select>
+</div>
+<div id="items3" style=display:none>
+<font color="#922b21">Criteria 3:</font>
+<input type="text" name="ctext3"><br>
+<font color="#922b21">Scale </font>
+<select  id="scale3" name="scale3">
+  <option value="-----">-----</option>
+  <option value="1-5">1-5</option>
+  <option value="Yes/No">Yes/No</option>
+</select>
+</div>
+<div id="items4" style=display:none>
+<font color="#922b21">Criteria 4:</font>
+<input type="text" name="ctext4"><br>
+<font color="#922b21">Scale </font>
+<select  id="scale4" name="scale4">
+  <option value="-----">-----</option>
+  <option value="1-5">1-5</option>
+  <option value="Yes/No">Yes/No</option>
+</select>
+</div>
+<div id="items5" style=display:none>
+<font color="#922b21">Criteria 5:</font>
+<input type="text" name="ctext5"><br>
+<font color="#922b21">Scale </font>
+<select  id="scale5" name="scale5">
+  <option value="-----">-----</option>
+  <option value="1-5">1-5</option>
+  <option value="Yes/No">Yes/No</option>
+</select>
+</div>
+
+
+
+<input type="submit" value="Submit"/>
+<br>
+<br>
+<br>
+{{data}}
+</div>
+
+
     
     
-    
-    
-    <input type="submit" value="Submit" />
+
 </form>
 </div>
 {% endblock %}

@@ -9,7 +9,7 @@ urlpatterns = [
         login_required(SumbitFormView.as_view()),
         name="hackathon_form"),
 		
-	 url(r'^$',
+	 url(r'^dynamic/$',
          login_required(DynamicFormView.as_view()),
-         name="hackathon_form"),
+         name="DynamicFormPage1"),
 ]

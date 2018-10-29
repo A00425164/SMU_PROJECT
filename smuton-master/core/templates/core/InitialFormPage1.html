@@ -63,12 +63,16 @@ function lala(){
 
 <form action="" method="post">
 {% csrf_token %}
-{{from}}
+<!-- {{from}} -->
 <!-- {{form.as_p}} -->
 
 
+
+
 <div class="w3-container w3-highway-red w3-center">
-<h1>Create Form</h1>
+<h1>Create Form!</h1>
+<p> <a href={% url "core:DynamicFormPage1" %}> Dynamic Page here! </a> </p>
+
 </div>
 <br>
 <br>
