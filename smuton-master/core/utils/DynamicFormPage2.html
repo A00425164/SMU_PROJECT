@@ -1,0 +1,16 @@
+{% extends "core/Dynamic_base.html" %}
+
+{% block title %}
+    New Dynamic Form
+{% endblock %}
+
+{% block content %}
+<h1><a href={% url "core:DynamicFormPage2" %}>Dynamic Forms</a></h1>
+<h2>New Form:</h2>
+
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="POST" />
+</form>
+<a href={% url "core:DynamicFormPage1" %}>Go Back!</a>
+{% endblock %}
