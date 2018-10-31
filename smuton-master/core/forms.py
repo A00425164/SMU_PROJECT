@@ -333,7 +333,7 @@ class JudgeResponseForm(forms.ModelForm):
     def save(self, commit=True):
         return super(JudgeResponseForm, self).save(commit)
 
-class DynamicForm(forms.Form):
+class DynamicForm(forms.ModelForm):
          
          
     OUTOFSELECTION= [

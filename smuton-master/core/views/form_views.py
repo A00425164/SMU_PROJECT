@@ -68,6 +68,7 @@ class DynamicFormView2(CreateView):#CreateView? Check all available views  try
         return super(DynamicFormView2, self).get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
+        print(request.POST)
         return super(DynamicFormView2, self).post(request, *args, **kwargs)
 
     def get_form_class(self):
@@ -101,7 +102,8 @@ class DynamicFormView2(CreateView):#CreateView? Check all available views  try
         return super(DynamicFormView2, self).get_template_names()
 
     def get_success_url(self):
-        return reverse("core:criteria_detail", args=(self.object.pk,))
+        #return reverse("core:criteria_detail", args=(self.object.pk,))
+        return reverse("core:DynamicFormPage2")
 
     
 #     def get(self, request, *args, **kwargs):
