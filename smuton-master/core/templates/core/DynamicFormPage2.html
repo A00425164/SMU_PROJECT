@@ -1,16 +1,75 @@
 {% extends "core/Dynamic_base.html" %}
 
+
+
+
+
+
 {% block title %}
     New Dynamic Form
 {% endblock %}
 
 {% block content %}
+
+<script type='text/javascript'>
+        function addFields(noofcriteria){
+            // Number of inputs to create
+            //var number = document.getElementById("id_noofcriteria").value;
+            //var number = document.getElementsById("id_noofcriteria").val;
+            //alert(number);
+            
+            var blocky = document.createElement('repblock')
+                
+            // Container <div> where dynamic content will be placed
+            var container = document.getElementById("container");
+            //var container = $('#container');
+            // Clear previous contents of the container
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+            for (i=0;i<noofcriteria;i++){
+                // Append a node with desired block
+                container.appendChild(blocky);
+                // Append a line break 
+                container.appendChild(document.createElement("br"));
+            }
+        }
+</script>
+
+
 <h1><a href={% url "core:DynamicFormPage2" %}>Dynamic Forms</a></h1>
 <h2>New Form:</h2>
 
 <form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
+
+<!-- <font color="#922b21">How many criteria?</font> -->
+<!-- <select  id="noofcriteria" onclick="addFields(this.form.noofcriteria)" name="noofcriteria"> -->
+<!--   <option value="1">1</option> -->
+<!--   <option value="2">2</option> -->
+<!--   <option value="3">3</option> -->
+<!--   <option value="4">4</option> -->
+<!--   <option value="5">5</option> -->
+<!-- </select> -->
+
+    
+    {{ form.noofcriteria.label }}
+    {{ form.noofcriteria }}
+    <br>
+    <br>
+    <div id="repblock">
+    {{ form.name.label }}
+    {{ form.name }}
+    <br>
+    {{ form.scale.label }}
+    {{ form.scale }}
+    </div>
+    <div id="container">
+    </div>
+    <br>
+    <input type="button" value="Generate" onclick="addFields(form.noofcriteria.value)" />
+    <br>
     <input type="submit" value="POST" />
 </form>
 <a href={% url "core:DynamicFormPage1" %}>Go Back!</a>
+
 {% endblock %}

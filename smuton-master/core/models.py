@@ -48,7 +48,11 @@ class Criteria(models.Model):
         return self.name
     
     
-    
+class Dynamic(models.Model):
+    name = models.CharField(max_length=255, verbose_name="Criteria Name", unique=True)
+    scale = models.ForeignKey(Scale, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name  
         
 class JudgingRound(models.Model):
     

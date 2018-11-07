@@ -1,5 +1,5 @@
 from django import forms
-from .models import Judge, Team, Scale, ScaleEntry, Criteria, Hackathon, JudgingRound, JudgeResponse
+from .models import Judge, Team, Scale, ScaleEntry, Criteria, Hackathon, JudgingRound, JudgeResponse, Dynamic
 
 
 class JudgeForm(forms.ModelForm):
@@ -333,24 +333,77 @@ class JudgeResponseForm(forms.ModelForm):
     def save(self, commit=True):
         return super(JudgeResponseForm, self).save(commit)
 
+# class DynamicForm(forms.ModelForm):
+#          
+#     OUTOFSELECTION= [
+#             ('-----', '-----'),
+#             ('1 to 5', '1 to 5'),
+#             ('Yes/No', 'Yes/No'),
+#             ('Other', 'Other'),
+#             ]
+#     NOOFCRITERIA=[tuple([x,x]) for x in range(1,32)]     
+#     noofcriteria = forms.Select(choices=NOOFCRITERIA)
+#     post = forms.Select(OUTOFSELECTION)
+#     
+#     
+#     
+#     class Meta:
+#         model = Dynamic
+#         fields = ['name', 'scale']
+#         exclude = []
+#         widgets = None
+#         localized_fields = None
+#         labels = {}
+#         help_texts = {}
+#         error_messages = {}
+#         
+# 
+#     def __init__(self, *args, **kwargs):
+#         return super(DynamicForm, self).__init__(*args, **kwargs)
+# 
+#     def is_valid(self):
+#         return super(DynamicForm, self).is_valid()
+# 
+#     def full_clean(self):
+#         return super(DynamicForm, self).full_clean()
+# 
+#     def clean_name(self):
+#         name = self.cleaned_data.get("name", None)
+#         return name
+# 
+#     def clean_scale(self):
+#         scale = self.cleaned_data.get("scale", None)
+#         return scale
+# 
+#     def clean(self):
+#         return super(DynamicForm, self).clean()
+# 
+#     def validate_unique(self):
+#         return super(DynamicForm, self).validate_unique()
+# 
+#     def save(self, commit=True):
+#         return super(DynamicForm, self).save(commit)
+    
+
+    
+
+
 class DynamicForm(forms.ModelForm):
          
-         
-    OUTOFSELECTION= [
-    ('-----', '-----'),
-    ('1 to 5', '1 to 5'),
-    ('Yes/No', 'Yes/No'),
-    ('Other', 'Other'),
-    ]
-    
-    NOOFCRITERIA=[tuple([x,x]) for x in range(1,32)]
-    
-    noofcriteria = forms.Select(choices=NOOFCRITERIA)
-    
-    post = forms.Select()
+#     OUTOFSELECTION= [
+#             ('-----', '-----'),
+#             ('1 to 5', '1 to 5'),
+#             ('Yes/No', 'Yes/No'),
+#             ('Other', 'Other'),
+#             ]
+    #NOOFCRITERIA=[tuple([x,x]) for x in range(1,32)]     
+    #noofcriteria = forms.Select(choices=NOOFCRITERIA)
+    #post = forms.Select(OUTOFSELECTION)
+
+    noofcriteria = forms.ChoiceField(choices=[(x, x) for x in range(1, 11)])
     
     class Meta:
-        model = Criteria
+        model = Dynamic
         fields = ['name', 'scale']
         exclude = []
         widgets = None
@@ -358,30 +411,52 @@ class DynamicForm(forms.ModelForm):
         labels = {}
         help_texts = {}
         error_messages = {}
+        
+#     field1 = forms.ModelChoiceField(queryset=Scale.objects, empty_label=None)
+    
+    
+#    def __init__(self, *args, **kwargs):
+#       return super(DynamicForm, self).__init__(*args, **kwargs)
+#        extra_fields = kwargs.pop('extra', 0)
+#        super(DynamicForm, self).__init__(*args, **kwargs)
+#         self.fields['name'].initial = extra_fields
+#         self.fields['scale'].initial = extra_fields
+        
+#        for index in range(int(extra_fields)):
+            # generate extra fields in the number specified via extra_fields
+#            self.fields['extra_field_{index}'.format(index=index)] = \
+#                forms.CharField()
 
+
+        
+#  
     def __init__(self, *args, **kwargs):
-        return super(DynamicForm, self).__init__(*args, **kwargs)
+#         for i, x in range(10):
+#             self.fields['item_name_%d' % i] = forms.ModelForm.fields
+        super(DynamicForm, self).__init__(*args, **kwargs)
+
+
 
     def is_valid(self):
         return super(DynamicForm, self).is_valid()
-
+  
     def full_clean(self):
         return super(DynamicForm, self).full_clean()
-
+  
     def clean_name(self):
         name = self.cleaned_data.get("name", None)
         return name
-
+  
     def clean_scale(self):
         scale = self.cleaned_data.get("scale", None)
         return scale
-
+  
     def clean(self):
         return super(DynamicForm, self).clean()
-
+  
     def validate_unique(self):
         return super(DynamicForm, self).validate_unique()
-
+  
     def save(self, commit=True):
         return super(DynamicForm, self).save(commit)
 
