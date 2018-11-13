@@ -19,5 +19,8 @@ urlpatterns = [
     url(r'^dynamic2/$',
          login_required(DynamicFormView2.as_view()),
          name="DynamicFormPage2"),
+    
+    
+    url(r'^api/get_criteria_names/', login_required(SumbitFormView.as_view()), name='get_criteria_names'),
   
 ]

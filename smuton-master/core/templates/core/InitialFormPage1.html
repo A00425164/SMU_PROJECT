@@ -8,49 +8,158 @@
 <title>Judging form!</title>
 <!-- <script type="text/javascript" src="smuton-master/static/js/FieldAdder1.js"></script> -->
 <!-- <script type="text/javascript" src="smuton-master/static/js/FieldAdder2.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
 <script>
-function lala(){
-	var k = document.getElementById("noofcriteria");
-	var l = k.options[k.selectedIndex].value;
+// function lalaka(){
+// 	var k = document.getElementById("noofcriteria");
+// 	var l = k.options[k.selectedIndex].value;
 
-	if(l=='1'){
-		document.getElementById("items1").style.display = "block";
-		document.getElementById("items2").style.display = "none";
-		document.getElementById("items3").style.display = "none";
-		document.getElementById("items4").style.display = "none";
-		document.getElementById("items5").style.display = "none";
-	}
-	if(l=='2'){
-		document.getElementById("items1").style.display = "block";
-		document.getElementById("items2").style.display = "block";
-		document.getElementById("items3").style.display = "none";
-		document.getElementById("items4").style.display = "none";
-		document.getElementById("items5").style.display = "none";
-	}
-	if(l=='3'){
-		document.getElementById("items1").style.display = "block";
-		document.getElementById("items2").style.display = "block";
-		document.getElementById("items3").style.display = "block";
-		document.getElementById("items4").style.display = "none";
-		document.getElementById("items5").style.display = "none";
-	}
-	if(l=='4'){
-		document.getElementById("items1").style.display = "block";
-		document.getElementById("items2").style.display = "block";
-		document.getElementById("items3").style.display = "block";
-		document.getElementById("items4").style.display = "block";
-		document.getElementById("items5").style.display = "none";
-	}
-	if(l=='5'){
-		document.getElementById("items1").style.display = "block";
-		document.getElementById("items2").style.display = "block";
-		document.getElementById("items3").style.display = "block";
-		document.getElementById("items4").style.display = "block";
-		document.getElementById("items5").style.display = "block";
-	}
+// 	if(l=='1'){
+// 		document.getElementById("items1").style.display = "block";
+// 		document.getElementById("items2").style.display = "none";
+// 		document.getElementById("items3").style.display = "none";
+// 		document.getElementById("items4").style.display = "none";
+// 		document.getElementById("items5").style.display = "none";
+// 	}
+// 	if(l=='2'){
+// 		document.getElementById("items1").style.display = "block";
+// 		document.getElementById("items2").style.display = "block";
+// 		document.getElementById("items3").style.display = "none";
+// 		document.getElementById("items4").style.display = "none";
+// 		document.getElementById("items5").style.display = "none";
+// 	}
+// 	if(l=='3'){
+// 		document.getElementById("items1").style.display = "block";
+// 		document.getElementById("items2").style.display = "block";
+// 		document.getElementById("items3").style.display = "block";
+// 		document.getElementById("items4").style.display = "none";
+// 		document.getElementById("items5").style.display = "none";
+// 	}
+// 	if(l=='4'){
+// 		document.getElementById("items1").style.display = "block";
+// 		document.getElementById("items2").style.display = "block";
+// 		document.getElementById("items3").style.display = "block";
+// 		document.getElementById("items4").style.display = "block";
+// 		document.getElementById("items5").style.display = "none";
+// 	}
+// 	if(l=='5'){
+// 		document.getElementById("items1").style.display = "block";
+// 		document.getElementById("items2").style.display = "block";
+// 		document.getElementById("items3").style.display = "block";
+// 		document.getElementById("items4").style.display = "block";
+// 		document.getElementById("items5").style.display = "block";
+// 	}
 	
 	
+// }
+</script>
+<script type='text/javascript'>
+//         function addFields(){
+//         	var input = document.getElementById("noofcriteria").selectedIndex;
+//             // Number of inputs to create
+//             //var number = document.getElementById("id_noofcriteria").value;
+//             //var number = document.getElementsById("id_noofcriteria").val;
+//             //alert(number);
+            
+        	
+            
+            
+//             var blocky = document.createElement('items1');
+                
+//             // Container <div> where dynamic content will be placed
+//             var container = document.getElementById("container");
+//             //var container = $('#container');
+//             // Clear previous contents of the container
+            
+            
+            
+//             while (container.hasChildNodes()) {
+//                 container.removeChild(container.lastChild);
+//             }
+            
+//             var arrayDiv = new Array();
+//             for(var i=0; i <= input; i++){
+//                 arrayDiv[i] = document.createElement("items1");
+//                 arrayDiv[i].style.display = 'block';
+//                 arrayDiv[i].id = 'blocks' + i;
+//                 arrayDiv[i].className = 'blocks' + i;
+//                 container.appendChild(arrayDiv[i]);
+//                 container.appendChild(document.createElement("br"));
+//             }
+            
+// //             for (i=0;i<input;i++){
+// //                 // Append a node with desired block
+// //                 container.appendChild(blocky);
+// //                 // Append a line break 
+// //                 container.appendChild(document.createElement("br"));
+// //             }
+//         }
+// <form name="myForm" id="myForm" method="post" action="' + action + '">\
+//           <input id="name' + index + '" name="name' + index + '" />\
+//           <input id="email' + index + '" name="email' + index + '" />\
+//           <input id="phone' + index + '" name="phone' + index + '" />\
+//           <input type="submit" value="Save">\
+//           <a href="#" class="remove">remove form</a>\
+//         </form>\
+
+var wrapper = document.getElementById("container");
+//var e = document.getElementById("noofcriteria");
+var index = 0;
+
+
+
+//var getForm = function lala (index, action){
+//    return $(textlala);
+//}
+
+$();
+function autocompletely(input) {
+	  $("#name'+(i+1)+'").autocomplete({
+	    source: "/api/get_criteria_names/",
+	    minLength: 2,
+	  });
+	}
+function myfunction(){
+// 	if (e != null) {
+// 		var value = e.value;
+// 		var text = e.text;	
+// 	}
+// 	else {
+// 		var value = null;
+// 		var text = null;
+// 	}
+	var value = document.getElementById("noofcriteria").value;
+//	var text = e.text;
+var flag = 0;
+if (flag==1){
+	flag = 0;
+	while (container.hasChildNodes()) {
+     container.removeChild(container.lastChild);
+    }
+}else{
+	flag = 1;
+	{% debug %}
+	for(var i=0; i < value; i++){
+		var textlala = '<div id="items'+(i+1)+'"><font color="#922b21">Criteria '+(i+1)+' :</font><input type="text" name="name'+(i+1)+'" ><br><font color="#922b21">Scale </font><select  id="scale'+(i+1)+'" name="scale'+(i+1)+'">{% for entry in scale %}<option value="{{ scales_posts.name }}">{{ scales_posts.name }}</option>{% endfor %}</select></div>'
+//		var textlala = '<div id="items'+(i+1)+'"><font color="#922b21">Criteria '+(i+1)+' :</font><input type="text" id="name'+(i+1)+'" name="name'+(i+1)+'" ><br><font color="#922b21">Scale </font><select  id="scale'+(i+1)+'" name="scale'+(i+1)+'"><option value="-----">-----</option><option value="1-5">1-5</option><option value="Yes/No">Yes/No</option></select></div>'
+
+// 		var textlala = '<div id="items'+(i+1)+'"><font color="#922b21">Criteria '+(i+1)+' :</font><input type="text" name="name'+(i+1)+'" ><br><font color="#922b21">Scale </font><select  id="scale'+(i+1)+'" name="scale'+(i+1)+'"><option value="-----">-----</option><option value="1-5">1-5</option><option value="Yes/No">Yes/No</option></select></div>'
+
+		$('#container').append(textlala);
+		
+//		var form = getForm(++index);
+// 	    form.find(".remove").on("click", lala(){
+// 	       		$(this).parent().remove();
+// 	    });
+//	    wrapper.append(textlala);
+		
+	}
+}	
+		
 }
+	
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -61,10 +170,6 @@ function lala(){
 
 
 
-<form action="" method="post">
-{% csrf_token %}
-<!-- {{from}} -->
-<!-- {{form.as_p}} -->
 
 
 
@@ -78,7 +183,7 @@ function lala(){
 <br>
 <p style="margin-left:30px; ">
 <font color="#922b21">How many criteria?</font>
-<select  id="noofcriteria" onclick="lala()">
+<select  id="noofcriteria" name="noofcriteria" onchange="myfunction()">
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
@@ -86,6 +191,10 @@ function lala(){
   <option value="5">5</option>
 </select>
 </p>
+<form action="" method="post">
+{% csrf_token %}
+<!-- {{from}} -->
+<!-- {{form.as_p}} -->
 
 <br>
 <br>
@@ -101,65 +210,73 @@ function lala(){
 <br>
 <br>
 
+<!-- <div id="3repblock3"> -->
+<!--     {{ form.as_p }} -->
+<!-- </div> -->
 
 
+<!-- <div id="2repblock2"> -->
+<!--     {{ form.name.label }} -->
+<!--     {{ form.name }} -->
+<!--     <br> -->
+<!--     {{ form.scale.label }} -->
+<!--     {{ form.scale }} -->
+<!-- </div> -->
 
 
-
-
-
-
+<div id="container"></div>
+    
 <div style="margin-left:30px; ">
-<div id="items1" style=display:none>
-<font color="#922b21">Criteria 1:</font>
-<input type="text" ><br>
-<font color="#922b21">Scale </font>
-<select  id="scale1">
-  <option value="-----">-----</option>
-  <option value="1-5">1-5</option>
-  <option value="Yes/No">Yes/No</option>
-</select>
-</div>
-<div id="items2" style=display:none>
-<font color="#922b21">Criteria 2:</font>
-<input type="text" ><br>
-<font color="#922b21">Scale </font>
-<select  id="scale2">
-  <option value="-----">-----</option>
-  <option value="1-5">1-5</option>
-  <option value="Yes/No">Yes/No</option>
-</select>
-</div>
-<div id="items3" style=display:none>
-<font color="#922b21">Criteria 3:</font>
-<input type="text" ><br>
-<font color="#922b21">Scale </font>
-<select  id="scale3">
-  <option value="-----">-----</option>
-  <option value="1-5">1-5</option>
-  <option value="Yes/No">Yes/No</option>
-</select>
-</div>
-<div id="items4" style=display:none>
-<font color="#922b21">Criteria 4:</font>
-<input type="text" ><br>
-<font color="#922b21">Scale </font>
-<select  id="scale4">
-  <option value="-----">-----</option>
-  <option value="1-5">1-5</option>
-  <option value="Yes/No">Yes/No</option>
-</select>
-</div>
-<div id="items5" style=display:none>
-<font color="#922b21">Criteria 5:</font>
-<input type="text" ><br>
-<font color="#922b21">Scale </font>
-<select  id="scale5">
-  <option value="-----">-----</option>
-  <option value="1-5">1-5</option>
-  <option value="Yes/No">Yes/No</option>
-</select>
-</div>
+<!-- <div id="items1" style=display:none> -->
+<!-- <font color="#922b21">Criteria 1:</font> -->
+<!-- <input type="text" name="name1" ><br> -->
+<!-- <font color="#922b21">Scale </font> -->
+<!-- <select  id="scale1" name="scale1"> -->
+<!--   <option value="-----">-----</option> -->
+<!--   <option value="1-5">1-5</option> -->
+<!--   <option value="Yes/No">Yes/No</option> -->
+<!-- </select> -->
+<!-- </div> -->
+<!-- <div id="items2" style=display:none> -->
+<!-- <font color="#922b21">Criteria 2:</font> -->
+<!-- <input type="text" name="name2"><br> -->
+<!-- <font color="#922b21">Scale </font> -->
+<!-- <select  id="scale2" name="scale2"> -->
+<!--   <option value="-----">-----</option> -->
+<!--   <option value="1-5">1-5</option> -->
+<!--   <option value="Yes/No">Yes/No</option> -->
+<!-- </select> -->
+<!-- </div> -->
+<!-- <div id="items3" style=display:none> -->
+<!-- <font color="#922b21">Criteria 3:</font> -->
+<!-- <input type="text" name="name3"><br> -->
+<!-- <font color="#922b21">Scale </font> -->
+<!-- <select  id="scale3" name="scale3"> -->
+<!--   <option value="-----">-----</option> -->
+<!--   <option value="1-5">1-5</option> -->
+<!--   <option value="Yes/No">Yes/No</option> -->
+<!-- </select> -->
+<!-- </div> -->
+<!-- <div id="items4" style=display:none> -->
+<!-- <font color="#922b21">Criteria 4:</font> -->
+<!-- <input type="text" name="name4"><br> -->
+<!-- <font color="#922b21">Scale </font> -->
+<!-- <select  id="scale4" name="scale4"> -->
+<!--   <option value="-----">-----</option> -->
+<!--   <option value="1-5">1-5</option> -->
+<!--   <option value="Yes/No">Yes/No</option> -->
+<!-- </select> -->
+<!-- </div> -->
+<!-- <div id="items5" style=display:none> -->
+<!-- <font color="#922b21">Criteria 5:</font> -->
+<!-- <input type="text" name="name5"><br> -->
+<!-- <font color="#922b21">Scale </font> -->
+<!-- <select  id="scale5" name="scale5"> -->
+<!--   <option value="-----">-----</option> -->
+<!--   <option value="1-5">1-5</option> -->
+<!--   <option value="Yes/No">Yes/No</option> -->
+<!-- </select> -->
+<!-- </div> -->
 <input type="submit" value="Submit"/>
 </div>
 
