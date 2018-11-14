@@ -132,22 +132,23 @@ function myfunction(){
 // 	}
 	var value = document.getElementById("noofcriteria").value;
 //	var text = e.text;
-var flag = 0;
-if (flag==1){
-	flag = 0;
+var append_checker = 0;
+if (append_checker!=0){
+	append_checker = 0;
 	while (container.hasChildNodes()) {
-     container.removeChild(container.lastChild);
+//      container.removeChild(container.lastChild);
+		$('#container').empty();
     }
 }else{
-	flag = 1;
-	{% debug %}
+	append_checker = 1;
+	$('#container').empty();
 	for(var i=0; i < value; i++){
-		var textlala = '<div id="items'+(i+1)+'"><font color="#922b21">Criteria '+(i+1)+' :</font><input type="text" name="name'+(i+1)+'" ><br><font color="#922b21">Scale </font><select  id="scale'+(i+1)+'" name="scale'+(i+1)+'">{% for entry in scale %}<option value="{{ scales_posts.name }}">{{ scales_posts.name }}</option>{% endfor %}</select></div>'
+		var criterion_html = '<div id="items"><font color="#922b21">Criteria '+(i+1)+' :</font><input type="text" name="name'+(i+1)+'" ><br><font color="#922b21">Scale </font><select  id="scale'+(i+1)+'" name="scale'+(i+1)+'">{% for entry in scale %}<option value="{{ entry.name }}">{{ entry.name }}</option>{% endfor %}</select></div>'
 //		var textlala = '<div id="items'+(i+1)+'"><font color="#922b21">Criteria '+(i+1)+' :</font><input type="text" id="name'+(i+1)+'" name="name'+(i+1)+'" ><br><font color="#922b21">Scale </font><select  id="scale'+(i+1)+'" name="scale'+(i+1)+'"><option value="-----">-----</option><option value="1-5">1-5</option><option value="Yes/No">Yes/No</option></select></div>'
 
 // 		var textlala = '<div id="items'+(i+1)+'"><font color="#922b21">Criteria '+(i+1)+' :</font><input type="text" name="name'+(i+1)+'" ><br><font color="#922b21">Scale </font><select  id="scale'+(i+1)+'" name="scale'+(i+1)+'"><option value="-----">-----</option><option value="1-5">1-5</option><option value="Yes/No">Yes/No</option></select></div>'
 
-		$('#container').append(textlala);
+		$('#container').append(criterion_html);
 		
 //		var form = getForm(++index);
 // 	    form.find(".remove").on("click", lala(){

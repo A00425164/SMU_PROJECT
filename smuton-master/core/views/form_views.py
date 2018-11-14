@@ -4,6 +4,7 @@ import csv
 import json
 from django.shortcuts import render
 from django.views import View
+from django.views.generic import TemplateView
 from django.template.context_processors import request
 from core import models
 #from django.views.generic.edit import CreateView
@@ -19,14 +20,8 @@ from django.http import Http404
 
 
         
-class SumbitFormView(View):
+class SumbitFormView(TemplateView):
     template_name = "core/InitialFormPage1.html"
-    
-    def get(self, request, *args, **kwargs):
-        criteria_posts=Criteria.objects.all()
-        scales_posts=Scale.objects.all()
-        print(criteria_posts,scales_posts)
-        return render(request, self.template_name)
     
     def dynamicformpage1(self, request, *args, **kwargs):
         return render(request, 'DynamicFormPage1.html')
@@ -76,7 +71,6 @@ class SumbitFormView(View):
     def get_context_data(self, *args, **kwargs):
         ret = super(SumbitFormView, self).get_context_data(*args, **kwargs)
         ret['scale'] = Scale.objects.all()
-        print(ret['scale'])
         return ret
     
     
